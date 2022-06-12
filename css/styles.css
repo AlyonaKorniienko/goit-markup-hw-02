@@ -6,6 +6,7 @@
 Основной цвет текста #757575
 Цвет заголовков #212121
 Акцентный цвет #2196F3
+Цвет кнопки ховера героя #188CE8
 Белый цвет текста #FFFFFF
 Белый цвет с прозрачностью rgba(255, 255, 255, 0.6) 
 Радиус скругления углов 4px
@@ -18,18 +19,9 @@ font-weight: 700;
 font-family: 'Roboto';
 font-style: normal;
 font-weight: 400;
-
-font-family: 'Roboto';
-font-style: normal;
 font-weight: 500;
-
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 900;
-
-font-family: 'Roboto';
-font-style: normal;
 font-weight: 700;
+font-weight: 900;
  */
 
 :root {
@@ -42,6 +34,8 @@ font-weight: 700;
 	--white-transparent-text-color: rgba(255, 255, 255, 0.6);
 	--border-radius: 4px;
 	--footer-bg-color: #2f303a;
+	--hero-btn-cl: #188ce8;
+	--black-logo-color: #000000;
 }
 
 /* Common styles */
@@ -56,16 +50,16 @@ body {
 	letter-spacing: 0.03em;
 }
 
-a {
-	text-decoration: none;
-	color: inherit;
-}
-
-li {
+.list {
 	list-style: none;
 }
 
+.link {
+	text-decoration: none;
+}
+
 .button {
+	font-family: inherit;
 	border-radius: var(--border-radius);
 	cursor: pointer;
 	font-weight: 700;
@@ -106,7 +100,7 @@ li {
 /* Nav menu */
 
 .logo {
-	color: #000000;
+	color: var(--black-logo-color);
 	font-family: "Raleway";
 	font-style: normal;
 	font-weight: 700;
@@ -129,7 +123,7 @@ li {
 	letter-spacing: 0.03em;
 }
 
-.menu > .link {
+.nav.link {
 	color: var(--title-color);
 	font-weight: 500;
 	font-size: 14px;
@@ -137,10 +131,9 @@ li {
 	letter-spacing: 0.02em;
 }
 
-/* .menu > .link:hover,
-.menu > .link:focus {
+.link.current {
 	color: var(--accent-color);
-} */
+}
 
 .nav.link:hover,
 .nav.link:focus {
@@ -154,23 +147,30 @@ li {
 	letter-spacing: 0.02em;
 }
 
-.contacts > .email:hover,
-.contacts > .email:focus {
-	color: var(--accent-color);
+.contact {
+	color: inherit;
 }
 
+.contact:hover,
+.contact:focus {
+	color: var(--accent-color);
+}
 /* Hero */
 
 .hero-title {
-	color: var(--title-color);
 	font-weight: 900;
 	font-size: 44px;
 	line-height: 1.36;
 	text-align: center;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
-	background-color: #757575;
-	color: #ffffff;
+	background-color: var(--main-text-color);
+	color: var(--main-bg-color);
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+	background-color: var(--hero-btn-cl);
 }
 
 /* Testimonials */
@@ -182,6 +182,14 @@ li {
 /* About */
 
 /* Our team */
+
+.sec-bg {
+	background-color: var(--add-bg-color);
+}
+
+.team-card {
+	background-color: var(--main-bg-color);
+}
 
 .section-subtitle.team {
 	font-weight: 500;
@@ -204,7 +212,6 @@ li {
 .address {
 	color: var(--white-text-color);
 	font-style: normal;
-	font-weight: 400;
 	font-size: 14px;
 	line-height: 1.71;
 	letter-spacing: 0.03em;
